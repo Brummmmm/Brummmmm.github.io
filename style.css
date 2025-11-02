@@ -83,9 +83,14 @@ h2 {
 
 /* HERO */
 .hero {
-  background: linear-gradient(120deg, var(--dark-blue), var(--black));
-  text-align: center;
-  color: var(--light);
+  background: linear-gradient(135deg, #0a1a2f 0%, #fa6b20 100%);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
 .hero h1 {
@@ -273,6 +278,84 @@ h2 {
   transform: translateY(-6px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
+
+/* ABOUT ME SECTION */
+.about {
+  background: var(--black);
+  color: var(--light);
+  max-width: 1300px;
+  margin: auto;
+  padding: 8rem 5%;
+}
+
+.about h2 {
+  color: var(--orange);
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 4rem;
+}
+
+.about-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-bottom: 6rem;
+}
+
+.about-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-text h3 {
+  font-size: 1.6rem;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  color: #ddd;
+}
+
+.about-photo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  object-fit: cover;
+  height: 350px;
+  transition: transform 0.4s ease;
+}
+
+.about-photo img:hover {
+  transform: scale(1.03);
+}
+
+/* spacing & responsiveness */
+@media (max-width: 900px) {
+  .about-block,
+  .about-block.reverse {
+    flex-direction: column;
+  }
+
+  .about-photo img {
+    height: 250px;
+    max-width: 100%;
+  }
+}
+
 
 /* FOOTER */
 footer {
