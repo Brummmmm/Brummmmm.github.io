@@ -32,32 +32,71 @@
     </div>
   </section>
 
-  <!-- Videos Section -->
+  <!-- Video Section -->
   <section id="videos" class="section dark">
     <h2>Video Projects</h2>
-    <div class="cards">
-      <div class="card video">
-        <video src="videos/sample1.mp4" controls></video>
-        <p>Promo reel 2024</p>
+    <div class="carousel-container">
+      <button class="arrow left" onclick="scrollCarousel(this, -1)">&#10094;</button>
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="media-card">
+            <video src="videos/sample1.mp4" muted loop></video>
+            <div class="overlay">
+              <h3>Promo reel 2024</h3>
+              <p>A dynamic showcase of my latest edits and visuals.</p>
+            </div>
+          </div>
+          <div class="media-card">
+            <video src="videos/sample2.mp4" muted loop></video>
+            <div class="overlay">
+              <h3>Short film montage</h3>
+              <p>A cinematic collection of my film cuts.</p>
+            </div>
+          </div>
+          <div class="media-card">
+            <video src="videos/sample3.mp4" muted loop></video>
+            <div class="overlay">
+              <h3>Event highlight</h3>
+              <p>Capturing the best moments from major events.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card video">
-        <video src="videos/sample2.mp4" controls></video>
-        <p>Short film montage</p>
-      </div>
-      <div class="card video">
-        <video src="videos/sample3.mp4" controls></video>
-        <p>Event highlight</p>
-      </div>
+      <button class="arrow right" onclick="scrollCarousel(this, 1)">&#10095;</button>
     </div>
   </section>
 
   <!-- Designs Section -->
   <section id="designs" class="section">
     <h2>Logo & Design Work</h2>
-    <div class="cards scrollable">
-      <div class="card"><img src="images/logo1.png" alt="Logo 1"><p>Sticky Merch Concept</p></div>
-      <div class="card"><img src="images/logo2.png" alt="Logo 2"><p>Festival Badge</p></div>
-      <div class="card"><img src="images/logo3.png" alt="Logo 3"><p>Sports Week Branding</p></div>
+    <div class="carousel-container">
+      <button class="arrow left" onclick="scrollCarousel(this, -1)">&#10094;</button>
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="media-card">
+            <img src="images/logo1.png" alt="Logo 1">
+            <div class="overlay">
+              <h3>Sticky Merch Concept</h3>
+              <p>Vibrant branding created for student merchandise.</p>
+            </div>
+          </div>
+          <div class="media-card">
+            <img src="images/logo2.png" alt="Logo 2">
+            <div class="overlay">
+              <h3>Festival Badge</h3>
+              <p>Modern, geometric logo for an electronic music festival.</p>
+            </div>
+          </div>
+          <div class="media-card">
+            <img src="images/logo3.png" alt="Logo 3">
+            <div class="overlay">
+              <h3>Sports Week Branding</h3>
+              <p>Dynamic branding concept for a campus sports event.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="arrow right" onclick="scrollCarousel(this, 1)">&#10095;</button>
     </div>
   </section>
 
@@ -84,11 +123,28 @@
   <section id="contact" class="section">
     <h2>Get in Touch</h2>
     <p>Let's collaborate on something great.</p>
-    <a href="mailto:olivier@example.com" class="btn">Email Me</a>
+    <a href="mailto:bram@example.com" class="btn">Email Me</a>
   </section>
 
   <footer>
     <p>© 2025 Bram de Haas. All Rights Reserved.</p>
   </footer>
+
+  <!-- Carousel Scroll Script -->
+  <script>
+    function scrollCarousel(btn, dir) {
+      const container = btn.parentElement.querySelector('.carousel');
+      container.scrollBy({ left: dir * 400, behavior: 'smooth' });
+    }
+
+    // Auto-scroll every 5 seconds
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      setInterval(() => {
+        if (document.activeElement.tagName !== 'BUTTON') {
+          carousel.scrollBy({ left: 400, behavior: 'smooth' });
+        }
+      }, 5000);
+    });
+  </script>
 </body>
 </html>
