@@ -150,13 +150,17 @@ h2 {
 /* bigger media cards */
 .media-card {
   position: relative;
-  flex: 0 0 420px; /* was 340px */
-  height: 280px; /* taller for visibility */
+  flex: 0 0 420px;
+  height: 300px;
   border-radius: 1rem;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .media-card:hover {
   transform: scale(1.07);
@@ -172,11 +176,24 @@ h2 {
   background-color: #fff;
 }
 
+/* Fix stretched logo scaling */
+.media-card img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  background: #fff;
+  display: block;
+  margin: auto;
+  padding: 1rem;
+}
+
+
 /* overlay on hover */
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(10, 10, 10, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, rgba(10, 10, 10, 0.9) 100%);
   color: white;
   opacity: 0;
   padding: 1.2rem;
