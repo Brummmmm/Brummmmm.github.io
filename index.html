@@ -85,7 +85,7 @@
           </div>
 
           <div class="media-card">
-            <img src="Desings/camo gold logo.png" alt="Camo Gold Challenge">
+            <img src="Files/Designs/camo gold logo.png" alt="Camo Gold Challenge">
             <div class="overlay"><h3>Camo Gold Challenge</h3><p>Sports challenge logo with camouflage and gold tones.</p></div>
           </div>
 
@@ -156,20 +156,37 @@
   </footer>
 
   <!-- Carousel Scroll Script -->
-  <script>
-    function scrollCarousel(btn, dir) {
-      const container = btn.parentElement.querySelector('.carousel');
-      container.scrollBy({ left: dir * 400, behavior: 'smooth' });
+<script>
+  function scrollCarousel(btn, dir) {
+    const container = btn.parentElement.querySelector('.carousel');
+    container.scrollBy({ left: dir * 450, behavior: 'smooth' });
+  }
+
+  // Infinite looping + auto-scroll
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    let autoScroll = setInterval(() => loopScroll(carousel), 4000);
+
+    function loopScroll(car) {
+      const maxScroll = car.scrollWidth - car.clientWidth;
+      if (car.scrollLeft + 420 >= maxScroll - 5) {
+        // smoothly reset to start
+        car.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        car.scrollBy({ left: 420, behavior: 'smooth' });
+      }
     }
 
-    // Auto-scroll every 5 seconds
-    document.querySelectorAll('.carousel').forEach(carousel => {
-      setInterval(() => {
-        if (document.activeElement.tagName !== 'BUTTON') {
-          carousel.scrollBy({ left: 400, behavior: 'smooth' });
-        }
-      }, 5000);
+    // Pause auto-scroll on hover
+    carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
+    carousel.addEventListener('mouseleave', () => autoScroll = setInterval(() => loopScroll(carousel), 4000));
+  });
+
+  // Auto-play videos on hover
+  document.querySelectorAll('video').forEach(video => {
+    video.addEventListener('mouseenter', () => video.play());
+    video.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
     });
-  </script>
-</body>
-</html>
+  });
+</script>
