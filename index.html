@@ -304,55 +304,61 @@
 </footer>
 
 
-<!-- Carousel Scroll Script -->
 <script>
-  function scrollCarousel(btn, dir) {
-    const container = btn.parentElement.querySelector('.carousel');
-    container.scrollBy({ left: dir * 450, behavior: 'smooth' });
-  }
-
-  // Infinite looping + auto-scroll
-  document.querySelectorAll('.carousel').forEach(carousel => {
-    let autoScroll = setInterval(() => loopScroll(carousel), 4000);
-
-    function loopScroll(car) {
-      const maxScroll = car.scrollWidth - car.clientWidth;
-      if (car.scrollLeft + 420 >= maxScroll - 5) {
-        // smoothly reset to start
-        car.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        car.scrollBy({ left: 420, behavior: 'smooth' });
-      }
-    }
-
-    // Pause auto-scroll on hover
-    carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
-    carousel.addEventListener('mouseleave', () => autoScroll = setInterval(() => loopScroll(carousel), 4000));
-  });
-
-  // Auto-play videos on hover
-  document.querySelectorAll('video').forEach(video => {
-    video.addEventListener('mouseenter', () => video.play());
-    video.addEventListener('mouseleave', () => {
-      video.pause();
-      video.currentTime = 0;
-    });
-  });
-
-function scrollIntroCarousel(dir) {
-  const track = document.querySelector('.carousel-track-intro');
-  track.scrollBy({ left: dir * 500, behavior: 'smooth' });
+/* --- GENERAL CAROUSELS (Designs & Videos) --- */
+function scrollCarousel(btn, dir) {
+  const container = btn.parentElement.querySelector('.carousel');
+  container.scrollBy({ left: dir * 450, behavior: 'smooth' });
 }
 
-// Auto-scroll for the intro carousel
-setInterval(() => {
-  const track = document.querySelector('.carousel-track-intro');
-  if (!track) return;
-  if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
-    track.scrollTo({ left: 0, behavior: 'smooth' });
-  } else {
-    track.scrollBy({ left: 500, behavior: 'smooth' });
-  }
-}, 4000);
+// Infinite looping + auto-scroll for all general carousels
+document.querySelectorAll('.carousel').forEach(carousel => {
+  let autoScroll = setInterval(() => loopScroll(carousel), 4000);
 
+  function loopScroll(car) {
+    const maxScroll = car.scrollWidth - car.clientWidth;
+    if (car.scrollLeft + 420 >= maxScroll - 5) {
+      car.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      car.scrollBy({ left: 420, behavior: 'smooth' });
+    }
+  }
+
+  carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
+  carousel.addEventListener('mouseleave', () => {
+    autoScroll = setInterval(() => loopScroll(carousel), 4000);
+  });
+});
+
+/* --- AUTO PLAY VIDEOS --- */
+document.querySelectorAll('video').forEach(video => {
+  video.addEventListener('mouseenter', () => video.play());
+  video.addEventListener('mouseleave', () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+});
+
+/* --- FIXED ABOUT-ME INTRO CAROUSEL --- */
+const track = document.querySelector('.carousel-track-intro');
+const slides = document.querySelectorAll('.carousel-track-intro img');
+let currentIndex = 0;
+
+// Update position using translateX (one full image visible)
+function updateIntroCarousel() {
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// Button control
+function scrollIntroCarousel(dir) {
+  currentIndex = (currentIndex + dir + slides.length) % slides.length;
+  updateIntroCarousel();
+}
+
+// Auto-scroll every 4 seconds
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateIntroCarousel();
+}, 4000);
 </script>
+
