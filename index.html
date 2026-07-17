@@ -6,19 +6,21 @@
   <title>Bram de Haas | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Navigation -->
   <header>
     <nav class="navbar">
       <div class="logo">BdH</div>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About me</a></li>
-        <li><a href="#videos">Videos</a></li>
-        <li><a href="#designs">Designs</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#projects">What I Do</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -27,9 +29,9 @@
   <!-- Hero Section -->
   <section id="home" class="section hero">
     <div class="content">
-      <h1>Hi, I'm <span>Bram de Haas</span>!</h1>
-      <p>A creative student blending film and design to tell visual stories that stand out.</p>
-      <a href="#videos" class="btn">Explore My Work</a>
+      <h1 class="animate-up">Hi, I'm <span>Bram de Haas</span>!</h1>
+      <p class="animate-up delay-1">A creative student blending film and design to tell visual stories that stand out.</p>
+      <a href="#videos" class="btn animate-up delay-2">Explore My Work</a>
     </div>
   </section>
 
@@ -37,11 +39,11 @@
 <section id="about" class="section about">
 
   <!-- Personal Intro -->
-  <div class="about-intro">
+  <div class="about-intro reveal">
     <div class="about-intro-text">
       <h2>About Me</h2>
       <p>
-        Hey! I’m <strong>Bram de Haas</strong>, a 21-year-old Information Science student from Utrecht.  
+        Hey! I’m <strong>Bram de Haas</strong>, a <span id="age"></span>-year-old Information Science student from Utrecht.  
         I’m creative, social, and full of energy — always looking for new ways to connect people and capture memories.  
         Whether I’m <strong>designing logos</strong>, <strong>editing videos</strong>, or working at festivals, I love creating moments that others can relive through visuals and stories.  
         When I’m not behind a screen, you’ll probably find me <strong>snowboarding, traveling, or at a festival with friends</strong>.
@@ -52,215 +54,290 @@
       <div class="photo-carousel">
         <button class="carousel-btn left" onclick="scrollIntroCarousel(-1)">&#10094;</button>
         <div class="carousel-track-intro">
-          <img src="Files/Photo's/Bram.jpg" alt="Portrait of Bram de Haas">
-          <img src="Files/Photo's/sneeuw.jpeg" alt="Snowboarding">
-          <img src="Files/Photo's/thirz.jpeg" alt="Traveling abroad">
-          <img src="Files/Photo's/strand.jpeg" alt="Hanging out with friends">
-          <img src="Files/Photo's/bier.jpeg" alt="Hanging out with friends">
-          <img src="Files/Photo's/keulen.jpg" alt="Traveling with friends">
-          <img src="Files/Photo's/evan.JPG" alt="Hanging out with friends">
-          <img src="Files/Photo's/concert.jpeg" alt="Concert">
+          <img src="Files/photos/bram.jpg" alt="Portrait of Bram de Haas">
+          <img src="Files/photos/sneeuw.jpeg" alt="Snowboarding">
+          <img src="Files/photos/strand.jpeg" alt="Hanging out with friends">
+          <img src="Files/photos/bier.jpeg" alt="Hanging out with friends">
+          <img src="Files/photos/keulen.jpg" alt="Traveling with friends">
+          <img src="Files/photos/evan.jpg" alt="Hanging out with friends">
         </div>
         <button class="carousel-btn right" onclick="scrollIntroCarousel(1)">&#10095;</button>
       </div>
     </div>
   </div>
 
-  <!-- Studies -->
-  <div class="about-block reverse">
-    <div class="about-text">
-      <h3>Information Science Student</h3>
-      <p>
-        I’m currently studying <strong>Information Science</strong> at Utrecht University, where I explore the bridge between technology, design, and people.  
-        My studies have taught me how to connect digital systems with user-centered thinking — a foundation I apply in everything I create.
-      </p>
-    </div>
-    <div class="about-photo">
-      <img src="Files/Photo's/utrecht.jpeg" alt="Utrecht University campus">
-    </div>
-  </div>
+  <!-- Roles grid -->
+  <div class="about-grid reveal">
 
-  <!-- Study Association Board -->
-  <div class="about-block">
-    <div class="about-text">
-      <h3>Board Year at Study Association Sticky</h3>
-      <p>
-        This year, I’m part of the <strong>board of Sticky</strong>, the study association for Information Science.  
-        It’s been an unforgettable experience — organizing events, managing projects, and building a strong student community.
-      </p>
+    <div class="about-card" tabindex="0">
+      <img src="Files/photos/utrecht.jpeg" alt="Utrecht University campus">
+      <div class="about-card-base-overlay"></div>
+      <div class="about-card-hover-overlay"></div>
+      <div class="about-card-icon"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12.5V17c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/></svg></div>
+      <div class="about-card-content">
+        <h3>Information Science Student</h3>
+        <p>I’m currently studying <strong>Information Science</strong> at Utrecht University, where I explore the bridge between technology, design, and people. My studies have taught me how to connect digital systems with user-centered thinking — a foundation I apply in everything I create.</p>
+      </div>
     </div>
-    <div class="about-photo">
-      <img src="Files/Photo's/Bestuur.jpg" alt="Sticky Board Team">
-    </div>
-  </div>
 
-  <!-- Video Editing -->
-  <div class="about-block reverse">
-    <div class="about-text">
-      <h3>Video Editing & Storytelling</h3>
-      <p>
-        I also work as a <strong>video editor</strong>, creating promotional reels, aftermovies, and creative shorts.  
-        Through editing, I combine rhythm, motion, and emotion to craft visual stories that truly connect with an audience.
-      </p>
+    <div class="about-card" tabindex="0">
+      <img src="Files/photos/bestuur.jpg" alt="Sticky Board Team">
+      <div class="about-card-base-overlay"></div>
+      <div class="about-card-hover-overlay"></div>
+      <div class="about-card-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="18" cy="8.5" r="2.4"/><path d="M15.8 14.3c2.6.3 4.7 2.3 4.7 5.2"/></svg></div>
+      <div class="about-card-content">
+        <h3>Board Year at Study Association Sticky</h3>
+        <p>This year, I’m part of the <strong>board of Sticky</strong>, the study association for Information Science. It’s been an unforgettable experience — organizing events, managing projects, and building a strong student community.</p>
+      </div>
     </div>
-    <div class="about-photo">
-      <img src="Files/Photo's/filmen.jpg" alt="Editing workspace with timeline view">
-    </div>
-  </div>
 
-  <!-- Summer Sports Week -->
-  <div class="about-block">
-    <div class="about-text">
-      <h3>Organizer of Summer Sports Week</h3>
-      <p>
-        I’m also involved in organizing <strong>Summer Sports Week</strong> — a big annual sports event full of fun, teamwork, and outdoor challenges.  
-        Bringing people together through sports is one of my favorite things to do.
-      </p>
+    <div class="about-card" tabindex="0">
+      <img src="Files/photos/filmen.jpg" alt="Editing workspace with timeline view">
+      <div class="about-card-base-overlay"></div>
+      <div class="about-card-hover-overlay"></div>
+      <div class="about-card-icon"><svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="14" height="12" rx="2"/><path d="M21.5 8.5 16.5 12l5 3.5v-7Z"/></svg></div>
+      <div class="about-card-content">
+        <h3>Video Editing & Storytelling</h3>
+        <p>I also work as a <strong>video editor</strong>, creating promotional reels, aftermovies, and creative shorts. Through editing, I combine rhythm, motion, and emotion to craft visual stories that truly connect with an audience.</p>
+      </div>
     </div>
-    <div class="about-photo">
-      <img src="Files/Photo's/SSW.jpg" alt="Summer Sports Week activities">
-    </div>
-  </div>
 
-  <!-- Bar Work -->
-  <div class="about-block reverse">
-    <div class="about-text">
-      <h3>Festival & Event Bartender</h3>
-      <p>
-        Outside the classroom, you’ll often find me <strong>behind the bar</strong> — serving visitors at festivals, concerts, and large events.  
-        Working in fast-paced environments taught me teamwork, communication, and how to keep cool under pressure (literally).
-      </p>
+    <div class="about-card" tabindex="0">
+      <img src="Files/photos/ssw.jpg" alt="Summer Sports Week activities">
+      <div class="about-card-base-overlay"></div>
+      <div class="about-card-hover-overlay"></div>
+      <div class="about-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4Z"/></svg></div>
+      <div class="about-card-content">
+        <h3>Organizer of Summer Sports Week</h3>
+        <p>I’m also involved in organizing <strong>Summer Sports Week</strong> — a big annual sports event full of fun, teamwork, and outdoor challenges. Bringing people together through sports is one of my favorite things to do.</p>
+      </div>
     </div>
-    <div class="about-photo">
-      <img src="Files/Photo's/festival.jpeg" alt="Working behind the bar at a festival">
-    </div>
-  </div>
 
-  <!-- Logo Design -->
-  <div class="about-block">
-    <div class="about-text">
-      <h3>Logo Design & Visual Identity</h3>
-      <p>
-        Over the past years, I’ve designed numerous <strong>logos, posters, and visual identities</strong> for events, student associations, and creative projects.  
-        My focus lies in combining simplicity with meaning — making designs that are instantly recognizable and full of character.
-      </p>
+    <div class="about-card" tabindex="0">
+      <img src="Files/photos/festival.jpeg" alt="Working behind the bar at a festival">
+      <div class="about-card-base-overlay"></div>
+      <div class="about-card-hover-overlay"></div>
+      <div class="about-card-icon"><svg viewBox="0 0 24 24"><path d="M6 3h12l-1.2 9.5a4.8 4.8 0 0 1-9.6 0L6 3Z"/><path d="M12 12.5V21M8 21h8"/></svg></div>
+      <div class="about-card-content">
+        <h3>Bar Lead & Cash Register Manager</h3>
+        <p>Outside the classroom, you’ll often find me running the bar as <strong>bar lead and cash register manager</strong> at festivals and events. Keeping a fast-paced bar running smoothly and the till balanced under pressure taught me responsibility, teamwork, and how to stay calm when it gets busy.</p>
+      </div>
     </div>
-    <div class="about-photo">
-      <img src="Files/Photo's/logo's.jpg" alt="Logo design portfolio overview">
-    </div>
-  </div>
 
-  <!-- Outdoor PACT -->
-  <div class="about-block reverse">
-    <div class="about-text">
-      <h3>Outdoor Instructor at PACT</h3>
-      <p>
-        I also work as an <strong>outdoor sports instructor</strong> with <strong>PACT</strong>, organizing climbing, survival, and sports activities for kids.  
-        It’s an amazing way to combine my energy, creativity, and love for the outdoors.
-      </p>
+    <div class="about-card" tabindex="0">
+      <img src="Files/photos/logo-portfolio.jpg" alt="Logo design portfolio overview">
+      <div class="about-card-base-overlay"></div>
+      <div class="about-card-hover-overlay"></div>
+      <div class="about-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18"/></svg></div>
+      <div class="about-card-content">
+        <h3>Logo Design & Visual Identity</h3>
+        <p>Over the past years, I’ve designed numerous <strong>logos, posters, and visual identities</strong> for events, student associations, and creative projects. My focus lies in combining simplicity with meaning — making designs that are instantly recognizable and full of character.</p>
+      </div>
     </div>
-    <div class="about-photo">
-      <img src="Files/Photo's/PACT.jpeg" alt="Outdoor sports with kids at PACT">
+
+    <div class="about-card" tabindex="0">
+      <img src="Files/photos/pact.jpeg" alt="Outdoor sports with kids at PACT">
+      <div class="about-card-base-overlay"></div>
+      <div class="about-card-hover-overlay"></div>
+      <div class="about-card-icon"><svg viewBox="0 0 24 24"><path d="m3 20 6.5-12L14 15l3-5.5L21 20Z"/></svg></div>
+      <div class="about-card-content">
+        <h3>Outdoor Instructor at PACT</h3>
+        <p>I also work as an <strong>outdoor sports instructor</strong> with <strong>PACT</strong>, organizing climbing, survival, and sports activities for kids. It’s an amazing way to combine my energy, creativity, and love for the outdoors.</p>
+      </div>
     </div>
+
+    <div class="about-card about-card-placeholder" tabindex="0">
+      <div class="about-card-base-overlay"></div>
+      <div class="about-card-hover-overlay"></div>
+      <div class="about-card-icon"><svg viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="13" rx="2.5"/><circle cx="12" cy="13.5" r="3.6"/><path d="M8.5 7 10 4.5h4L15.5 7"/></svg></div>
+      <div class="about-card-content">
+        <h3>Photography & Videography</h3>
+        <p>With my <strong>Sony a6700</strong>, I shoot both photography and video content — from candid festival moments to cinematic edits. It’s become my go-to camera for combining sharp stills with smooth, dynamic footage.</p>
+      </div>
+    </div>
+
   </div>
 
 </section>
 
-<!-- Video Section -->
-<section id="videos" class="section dark">
-  <h2>Video Projects</h2>
+<!-- Projects Section -->
+<section id="projects" class="section">
+  <h2 class="reveal">What I Do</h2>
+
+  <div class="work-block reveal">
+    <p class="section-subhead">Video Editing</p>
+    <p class="work-intro">I create cinematic edits for social media, events, and campaigns.</p>
   <div class="carousel-container">
     <button class="arrow left" onclick="scrollCarousel(this, -1)">&#10094;</button>
     <div class="carousel">
       <div class="carousel-track">
-        <div class="media-card">
-          <video src="videos/sample1.mp4" muted loop></video>
-          <div class="overlay">
-            <h3>Promo reel 2024</h3>
-            <p>A dynamic showcase of my latest edits and visuals.</p>
-          </div>
-        </div>
-        <div class="media-card">
-          <video src="videos/sample2.mp4" muted loop></video>
-          <div class="overlay">
-            <h3>Short film montage</h3>
-            <p>A cinematic collection of my film cuts.</p>
-          </div>
-        </div>
-        <div class="media-card">
-          <video src="videos/sample3.mp4" muted loop></video>
-          <div class="overlay">
-            <h3>Event highlight</h3>
-            <p>Capturing the best moments from major events.</p>
-          </div>
-        </div>
+
+    <a class="insta-card" href="https://www.instagram.com/p/DU-lRuMiL2g/" target="_blank" rel="noopener">
+      <div class="insta-card-bg"></div>
+      <div class="insta-card-overlay"></div>
+      <span class="insta-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+      <div class="insta-card-info">
+        <h3>Wintersports 2026</h3>
+        <span class="insta-cta">Watch Reel →</span>
+      </div>
+    </a>
+
+    <a class="yt-card" href="https://www.youtube.com/watch?v=CDNjFp8qvco" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/CDNjFp8qvco/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2025">
+      <div class="yt-card-overlay"></div>
+      <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M9 7.5v9l7.5-4.5L9 7.5Z"/></svg></span>
+      <div class="yt-card-info">
+        <span class="yt-card-year">2025</span>
+        <h3>Summer Sports Week — THE MOVIE</h3>
+      </div>
+    </a>
+
+    <a class="insta-card" href="https://www.instagram.com/p/DIbjKW8tzVC/" target="_blank" rel="noopener">
+      <div class="insta-card-bg"></div>
+      <div class="insta-card-overlay"></div>
+      <span class="insta-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+      <div class="insta-card-info">
+        <h3>Budapest 2025</h3>
+        <span class="insta-cta">Watch Reel →</span>
+      </div>
+    </a>
+
+    <a class="insta-card" href="https://www.instagram.com/p/DGViZMwN-MY/" target="_blank" rel="noopener">
+      <div class="insta-card-bg"></div>
+      <div class="insta-card-overlay"></div>
+      <span class="insta-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+      <div class="insta-card-info">
+        <h3>Wispo 2025</h3>
+        <span class="insta-cta">Watch Reel →</span>
+      </div>
+    </a>
+
+    <a class="insta-card" href="https://www.instagram.com/p/DV0vd9UgkVO/" target="_blank" rel="noopener">
+      <div class="insta-card-bg"></div>
+      <div class="insta-card-overlay"></div>
+      <span class="insta-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+      <div class="insta-card-info">
+        <h3>Camo Gold Run 2025</h3>
+        <span class="insta-cta">Watch Reel →</span>
+      </div>
+    </a>
+
+    <a class="insta-card" href="https://www.instagram.com/p/DEu4fihBUtA/" target="_blank" rel="noopener">
+      <div class="insta-card-bg"></div>
+      <div class="insta-card-overlay"></div>
+      <span class="insta-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+      <div class="insta-card-info">
+        <h3>Keulen 2025</h3>
+        <span class="insta-cta">Watch Reel →</span>
+      </div>
+    </a>
+
+    <a class="insta-card" href="https://www.instagram.com/p/DIBe5kLozUK/" target="_blank" rel="noopener">
+      <div class="insta-card-bg"></div>
+      <div class="insta-card-overlay"></div>
+      <span class="insta-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+      <div class="insta-card-info">
+        <h3>DUTCH OCR Shortcourse 2025</h3>
+        <span class="insta-cta">Watch Reel →</span>
+      </div>
+    </a>
+
+    <a class="yt-card" href="https://www.youtube.com/watch?v=v5n_riTIeO4" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/v5n_riTIeO4/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2024">
+      <div class="yt-card-overlay"></div>
+      <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M9 7.5v9l7.5-4.5L9 7.5Z"/></svg></span>
+      <div class="yt-card-info">
+        <span class="yt-card-year">2024</span>
+        <h3>Summer Sports Week — THE MOVIE</h3>
+      </div>
+    </a>
+
+    <a class="yt-card" href="https://www.youtube.com/watch?v=J3GhZImXvZ0" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/J3GhZImXvZ0/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2023">
+      <div class="yt-card-overlay"></div>
+      <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M9 7.5v9l7.5-4.5L9 7.5Z"/></svg></span>
+      <div class="yt-card-info">
+        <span class="yt-card-year">2023</span>
+        <h3>Summer Sports Week — THE MOVIE</h3>
+      </div>
+    </a>
+
+    <a class="yt-card" href="https://www.youtube.com/watch?v=bKc1b4d9puQ" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/bKc1b4d9puQ/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2022">
+      <div class="yt-card-overlay"></div>
+      <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M9 7.5v9l7.5-4.5L9 7.5Z"/></svg></span>
+      <div class="yt-card-info">
+        <span class="yt-card-year">2022</span>
+        <h3>Summer Sports Week — THE MOVIE</h3>
+      </div>
+    </a>
+
       </div>
     </div>
     <button class="arrow right" onclick="scrollCarousel(this, 1)">&#10095;</button>
   </div>
-</section>
+  </div>
 
-
-<!-- Designs Section -->
-<section id="designs" class="section">
-  <h2>Logo & Design Work</h2>
+  <div class="work-block reveal">
+    <p class="section-subhead">Graphic Design</p>
+    <p class="work-intro">From posters to logos, I bring concepts to life visually.</p>
   <div class="carousel-container">
     <button class="arrow left" onclick="scrollCarousel(this, -1)">&#10094;</button>
     <div class="carousel">
       <div class="carousel-track">
 
         <div class="media-card">
-          <img src="Files/Designs/almanak logo.png" alt="Almanak Logo">
+          <img src="Files/designs/almanak-logo.png" alt="Almanak Logo">
           <div class="overlay"><h3>Almanak</h3><p>Clapperboard-inspired logo for a film-themed almanac.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/Designs/BaCo logo.png" alt="BaCo Logo">
+          <img src="Files/designs/baco-logo.png" alt="BaCo Logo">
           <div class="overlay"><h3>BaCo</h3><p>Clean drink-themed logo for a committee revolving around cocktail events.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/Designs/camo gold logo.png" alt="Camo Gold Challenge">
+          <img src="Files/designs/camo-gold-logo.png" alt="Camo Gold Challenge">
           <div class="overlay"><h3>Camo Gold Challenge</h3><p>Sports challenge logo with camouflage and gold tones.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/Designs/Intro logo .png" alt="Intro Commissie Logo">
+          <img src="Files/designs/intro-commissie-logo.png" alt="Intro Commissie Logo">
           <div class="overlay"><h3>Intro Commissie</h3><p>Modern minimalistic logo for a student introduction committee.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/Designs/opa.png" alt="Opa">
+          <img src="Files/designs/opa-rose.png" alt="Opa">
           <div class="overlay"><h3>Rose with Gypsophila</h3><p>A piece made for my deceased grandfather.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/Designs/Lustrum logo.png" alt="Lustrum Logo">
+          <img src="Files/designs/lustrum-logo.png" alt="Lustrum Logo">
           <div class="overlay"><h3>Lustrum Logo</h3><p>Stylized flame mark representing the Sticky association’s lustrum theme.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/Designs/Media werkgroep logo.png" alt="Media Werkgroep Logo">
+          <img src="Files/designs/media-werkgroep-logo.png" alt="Media Werkgroep Logo">
           <div class="overlay"><h3>Media Werkgroep</h3><p>Media-oriented logo combining a camera, film, and color wheel.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/Designs/poha logo.png" alt="POHA Logo">
+          <img src="Files/designs/poha-logo.png" alt="POHA Logo">
           <div class="overlay"><h3>POHA</h3><p>Dental-themed logo combining a tooth and the African continent.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/Designs/Wispo '24:'25 logo.png" alt="See the Slopes">
+          <img src="Files/designs/wispo-24-25-logo.png" alt="See the Slopes">
           <div class="overlay"><h3>See the Slopes 2024–2025</h3><p>Playful ski-trip logo with French flag and dynamic typography.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/Designs/Wispo '25:'26 logo.png" alt="Skirby">
+          <img src="Files/designs/wispo-25-26-logo.png" alt="Skirby">
           <div class="overlay"><h3>Skirby 2025–2026</h3><p>Fun mascot-based skiing design combining nostalgia and creativity.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/Designs/almanak logo.png" alt="Almanak Logo">
+          <img src="Files/designs/almanak-logo.png" alt="Almanak Logo">
           <div class="overlay"><h3>Almanak</h3><p>Clapperboard-inspired logo for a film-themed almanac.</p></div>
         </div>
 
@@ -268,34 +345,46 @@
     </div>
     <button class="arrow right" onclick="scrollCarousel(this, 1)">&#10095;</button>
   </div>
-</section>
-
-
-<!-- Projects Section -->
-<section id="projects" class="section dark">
-  <h2>What I Do</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Video Editing</h3>
-      <p>I create cinematic edits for social media, events, and campaigns.</p>
-    </div>
-    <div class="card">
-      <h3>Graphic Design</h3>
-      <p>From posters to logos, I bring concepts to life visually.</p>
-    </div>
-    <div class="card">
-      <h3>Development</h3>
-      <p>I build websites that combine clean design and smart functionality.</p>
-    </div>
   </div>
+
+  <div class="work-block reveal">
+    <p class="section-subhead">Web Development</p>
+    <p class="work-intro">I build websites that combine clean design and smart functionality.</p>
+  <div class="web-grid">
+
+    <a class="web-card" href="https://summersportsweek.nl" target="_blank" rel="noopener">
+      <div class="web-card-visual web-card-visual-ssw">
+        <div class="web-card-browser"><span></span><span></span><span></span></div>
+      </div>
+      <div class="web-card-body">
+        <h3>Summer Sports Week</h3>
+        <p>The full website for an annual sports week for 200+ kids — from online registration and merch to a photo archive spanning eight editions. Built and maintained as one of the organizers.</p>
+        <span class="web-card-link">Visit summersportsweek.nl →</span>
+      </div>
+    </a>
+
+    <a class="web-card" href="https://stichtingpoha.nl" target="_blank" rel="noopener">
+      <div class="web-card-visual web-card-visual-poha">
+        <div class="web-card-browser"><span></span><span></span><span></span></div>
+      </div>
+      <div class="web-card-body">
+        <h3>Stichting POHA</h3>
+        <p>Website for Stichting Promoting Oral Health Africa, a non-profit that trains local healthcare workers in Africa in preventive oral health. I designed their logo earlier too.</p>
+        <span class="web-card-link">Visit stichtingpoha.nl →</span>
+      </div>
+    </a>
+
+  </div>
+  </div>
+
 </section>
 
 
 <!-- Contact -->
 <section id="contact" class="section">
-  <h2>Get in Touch</h2>
-  <p>Let's collaborate on something great.</p>
-  <a href="mailto:bram@example.com" class="btn">Email Me</a>
+  <h2 class="reveal">Get in Touch</h2>
+  <p class="reveal">Let's collaborate on something great.</p>
+  <a href="mailto:bram@example.com" class="btn reveal">Email Me</a>
 </section>
 
 
@@ -305,6 +394,26 @@
 
 
 <script>
+/* --- MOBILE NAV --- */
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
 /* --- GENERAL CAROUSELS (Designs & Videos) --- */
 function scrollCarousel(btn, dir) {
   const container = btn.parentElement.querySelector('.carousel');
@@ -360,5 +469,33 @@ setInterval(() => {
   currentIndex = (currentIndex + 1) % slides.length;
   updateIntroCarousel();
 }, 4000);
+
+/* --- AUTO-UPDATING AGE --- */
+const ageEl = document.getElementById('age');
+if (ageEl) {
+  const birthDate = new Date(2004, 1, 15); // 15 February 2004
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const hadBirthdayThisYear =
+    today.getMonth() > birthDate.getMonth() ||
+    (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+  if (!hadBirthdayThisYear) age--;
+  ageEl.textContent = age;
+}
+
+/* --- SCROLL REVEAL --- */
+const revealEls = document.querySelectorAll('.reveal');
+if (revealEls.length) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+}
 </script>
 
