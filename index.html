@@ -32,7 +32,7 @@
     <div class="content">
       <h1 class="animate-up">Hi, I'm <span>Bram de Haas</span>!</h1>
       <p class="animate-up delay-1">A creative student blending film and design to tell visual stories that stand out.</p>
-      <a href="#videos" class="btn animate-up delay-2">Explore My Work</a>
+      <a href="#projects" class="btn animate-up delay-2">Explore My Work</a>
     </div>
   </section>
 
@@ -444,6 +444,13 @@ if (hamburger) {
     });
   });
 }
+
+/* --- DESIGNS IN THE WILD (tap-to-flip on touch devices) --- */
+document.querySelectorAll('.media-card-wild').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('flipped');
+  });
+});
 
 /* --- GENERAL CAROUSELS (Designs & Videos) --- */
 function scrollCarousel(btn, dir) {

@@ -328,8 +328,13 @@ h2 {
   background-color: #fff;
 }
 
-/* Designs in the wild — show the real-world photo first, reveal the flat
-   design on hover/focus. */
+/* Designs in the wild — show the real-world photo first, tap/click reveals
+   the flat design (driven entirely by the .flipped class in main.js so
+   hover/focus can't fight with the click state). */
+.media-card-wild {
+  cursor: pointer;
+}
+
 .media-card-wild img {
   position: absolute;
   inset: 0;
@@ -349,24 +354,12 @@ h2 {
   transition: opacity 0.3s ease;
 }
 
-.media-card-wild:hover .wild-photo,
-.media-card-wild:focus-within .wild-photo {
+.media-card-wild.flipped .wild-photo {
   opacity: 0;
 }
 
-.media-card-wild:hover .design-logo,
-.media-card-wild:focus-within .design-logo {
+.media-card-wild.flipped .design-logo {
   opacity: 1;
-}
-
-@media (hover: none), (pointer: coarse) {
-  .media-card-wild .wild-photo {
-    opacity: 0;
-  }
-
-  .media-card-wild .design-logo {
-    opacity: 1;
-  }
 }
 
 /* overlay on hover */
