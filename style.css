@@ -302,12 +302,71 @@ h2 {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
-.media-card img,
+.media-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.media-card-lustrum,
+.media-card-lustrum img {
+  background-color: #04134b;
+}
+
+.media-card-jaartrui,
+.media-card-jaartrui img {
+  background-color: #000;
+}
+
 .media-card video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   background-color: #fff;
+}
+
+/* Designs in the wild — show the real-world photo first, reveal the flat
+   design on hover/focus. */
+.media-card-wild img {
+  position: absolute;
+  inset: 0;
+}
+
+.media-card-wild .wild-photo {
+  object-fit: cover;
+  object-position: center;
+  padding: 0;
+  background: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.media-card-wild .design-logo {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.media-card-wild:hover .wild-photo,
+.media-card-wild:focus-within .wild-photo {
+  opacity: 0;
+}
+
+.media-card-wild:hover .design-logo,
+.media-card-wild:focus-within .design-logo {
+  opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .media-card-wild .wild-photo {
+    opacity: 0;
+  }
+
+  .media-card-wild .design-logo {
+    opacity: 1;
+  }
 }
 
 /* overlay on hover */
@@ -846,10 +905,6 @@ h2 {
   transform: scale(1.05);
 }
 
-.about-card-placeholder {
-  background: linear-gradient(155deg, var(--c-orange) 0%, #f5c49a 100%);
-}
-
 .about-card-base-overlay {
   position: absolute;
   inset: 0;
@@ -962,19 +1017,6 @@ h2 {
     width: 100%;
     height: 130px;
     object-fit: cover;
-  }
-
-  .about-card-placeholder {
-    background: var(--c-bg2);
-  }
-
-  .about-card-placeholder::before {
-    content: '';
-    display: block;
-    flex-shrink: 0;
-    width: 100%;
-    height: 130px;
-    background: linear-gradient(155deg, var(--c-orange) 0%, #f5c49a 100%);
   }
 
   .about-card-base-overlay,

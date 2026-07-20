@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <!-- Navigation -->
   <header>
@@ -19,7 +20,6 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
         <li><a href="#about">About me</a></li>
         <li><a href="#projects">What I Do</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -36,7 +36,7 @@
     </div>
   </section>
 
- <!-- ABOUT ME SECTION -->
+ <!-- About me Section -->
 <section id="about" class="section about">
 
   <!-- Personal Intro -->
@@ -71,7 +71,7 @@
   <div class="about-grid reveal">
 
     <div class="about-card" tabindex="0">
-      <img src="Files/photos/utrecht.jpeg" alt="Utrecht University campus">
+      <img src="Files/photos/utrecht.jpeg" alt="Utrecht University campus" loading="lazy">
       <div class="about-card-base-overlay"></div>
       <div class="about-card-hover-overlay"></div>
       <div class="about-card-icon"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12.5V17c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/></svg></div>
@@ -82,7 +82,7 @@
     </div>
 
     <div class="about-card" tabindex="0">
-      <img src="Files/photos/bestuur.jpg" alt="Sticky Board Team">
+      <img src="Files/photos/bestuur.jpg" alt="Sticky Board Team" loading="lazy">
       <div class="about-card-base-overlay"></div>
       <div class="about-card-hover-overlay"></div>
       <div class="about-card-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="18" cy="8.5" r="2.4"/><path d="M15.8 14.3c2.6.3 4.7 2.3 4.7 5.2"/></svg></div>
@@ -93,29 +93,7 @@
     </div>
 
     <div class="about-card" tabindex="0">
-      <img src="Files/photos/filmen.jpg" alt="Editing workspace with timeline view">
-      <div class="about-card-base-overlay"></div>
-      <div class="about-card-hover-overlay"></div>
-      <div class="about-card-icon"><svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="14" height="12" rx="2"/><path d="M21.5 8.5 16.5 12l5 3.5v-7Z"/></svg></div>
-      <div class="about-card-content">
-        <h3>Video Editing & Storytelling</h3>
-        <p>I also work as a <strong>video editor</strong>, creating promotional reels, aftermovies, and creative shorts. Through editing, I combine rhythm, motion, and emotion to craft visual stories that truly connect with an audience.</p>
-      </div>
-    </div>
-
-    <div class="about-card" tabindex="0">
-      <img src="Files/photos/ssw.jpg" alt="Summer Sports Week activities">
-      <div class="about-card-base-overlay"></div>
-      <div class="about-card-hover-overlay"></div>
-      <div class="about-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4Z"/></svg></div>
-      <div class="about-card-content">
-        <h3>Organizer of Summer Sports Week</h3>
-        <p>I’m also involved in organizing <strong>Summer Sports Week</strong> — a big annual sports event full of fun, teamwork, and outdoor challenges. Bringing people together through sports is one of my favorite things to do.</p>
-      </div>
-    </div>
-
-    <div class="about-card" tabindex="0">
-      <img src="Files/photos/festival.jpeg" alt="Working behind the bar at a festival">
+      <img src="Files/photos/festival.jpeg" alt="Working behind the bar at a festival" loading="lazy">
       <div class="about-card-base-overlay"></div>
       <div class="about-card-hover-overlay"></div>
       <div class="about-card-icon"><svg viewBox="0 0 24 24"><path d="M6 3h12l-1.2 9.5a4.8 4.8 0 0 1-9.6 0L6 3Z"/><path d="M12 12.5V21M8 21h8"/></svg></div>
@@ -126,7 +104,40 @@
     </div>
 
     <div class="about-card" tabindex="0">
-      <img src="Files/photos/logo-portfolio.jpg" alt="Logo design portfolio overview">
+      <img src="Files/photos/ssw.jpg" alt="Summer Sports Week activities" loading="lazy">
+      <div class="about-card-base-overlay"></div>
+      <div class="about-card-hover-overlay"></div>
+      <div class="about-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4Z"/></svg></div>
+      <div class="about-card-content">
+        <h3>Organizer of Summer Sports Week</h3>
+        <p>I’m also involved in organizing <strong>Summer Sports Week</strong> — a big annual sports event full of fun, teamwork, and outdoor challenges. Bringing people together through sports is one of my favorite things to do.</p>
+      </div>
+    </div>
+
+    <div class="about-card" tabindex="0">
+      <img src="Files/photos/social-media-manager.jpg" alt="Sticky committee group photo" loading="lazy">
+      <div class="about-card-base-overlay"></div>
+      <div class="about-card-hover-overlay"></div>
+      <div class="about-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+      <div class="about-card-content">
+        <h3>Social Media Management</h3>
+        <p>I manage <strong>Instagram accounts</strong> for multiple organizations — currently for <strong>The Outdoor PACT</strong>, and previously for <strong>Study Association Sticky</strong> throughout the 2025–2026 academic year, recognizable by its orange accents. From content planning to visual consistency, I enjoy giving a brand's social presence a clear identity.</p>
+      </div>
+    </div>
+
+    <div class="about-card" tabindex="0">
+      <img src="Files/photos/filmen.jpg" alt="Editing workspace with timeline view" loading="lazy">
+      <div class="about-card-base-overlay"></div>
+      <div class="about-card-hover-overlay"></div>
+      <div class="about-card-icon"><svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="14" height="12" rx="2"/><path d="M21.5 8.5 16.5 12l5 3.5v-7Z"/></svg></div>
+      <div class="about-card-content">
+        <h3>Videography & Video Editing</h3>
+        <p>I <strong>film and edit</strong> promotional reels, aftermovies, and creative shorts — from capturing the footage to cutting it together. Through editing, I combine rhythm, motion, and emotion to craft visual stories that truly connect with an audience.</p>
+      </div>
+    </div>
+
+    <div class="about-card" tabindex="0">
+      <img src="Files/photos/logo-portfolio.jpg" alt="Logo design portfolio overview" loading="lazy">
       <div class="about-card-base-overlay"></div>
       <div class="about-card-hover-overlay"></div>
       <div class="about-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18"/></svg></div>
@@ -137,23 +148,13 @@
     </div>
 
     <div class="about-card" tabindex="0">
-      <img src="Files/photos/pact.jpeg" alt="Outdoor sports with kids at PACT">
-      <div class="about-card-base-overlay"></div>
-      <div class="about-card-hover-overlay"></div>
-      <div class="about-card-icon"><svg viewBox="0 0 24 24"><path d="m3 20 6.5-12L14 15l3-5.5L21 20Z"/></svg></div>
-      <div class="about-card-content">
-        <h3>Outdoor Instructor at PACT</h3>
-        <p>I also work as an <strong>outdoor sports instructor</strong> with <strong>PACT</strong>, organizing climbing, survival, and sports activities for kids. It’s an amazing way to combine my energy, creativity, and love for the outdoors.</p>
-      </div>
-    </div>
-
-    <div class="about-card about-card-placeholder" tabindex="0">
+      <img src="Files/photos/photography.jpg" alt="Bram photographing in a park" loading="lazy">
       <div class="about-card-base-overlay"></div>
       <div class="about-card-hover-overlay"></div>
       <div class="about-card-icon"><svg viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="13" rx="2.5"/><circle cx="12" cy="13.5" r="3.6"/><path d="M8.5 7 10 4.5h4L15.5 7"/></svg></div>
       <div class="about-card-content">
-        <h3>Photography & Videography</h3>
-        <p>With my <strong>Sony a6700</strong>, I shoot both photography and video content — from candid festival moments to cinematic edits. It’s become my go-to camera for combining sharp stills with smooth, dynamic footage.</p>
+        <h3>Photography</h3>
+        <p>With my <strong>Sony a6700</strong>, I capture candid moments and stills — from festival crowds to portraits. Photography is where I slow down and look for the shot that tells the story on its own.</p>
       </div>
     </div>
 
@@ -184,7 +185,7 @@
     </a>
 
     <a class="yt-card" href="https://www.youtube.com/watch?v=CDNjFp8qvco" target="_blank" rel="noopener">
-      <img src="https://img.youtube.com/vi/CDNjFp8qvco/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2025">
+      <img src="https://img.youtube.com/vi/CDNjFp8qvco/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2025" loading="lazy">
       <div class="yt-card-overlay"></div>
       <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M9 7.5v9l7.5-4.5L9 7.5Z"/></svg></span>
       <div class="yt-card-info">
@@ -244,7 +245,7 @@
     </a>
 
     <a class="yt-card" href="https://www.youtube.com/watch?v=v5n_riTIeO4" target="_blank" rel="noopener">
-      <img src="https://img.youtube.com/vi/v5n_riTIeO4/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2024">
+      <img src="https://img.youtube.com/vi/v5n_riTIeO4/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2024" loading="lazy">
       <div class="yt-card-overlay"></div>
       <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M9 7.5v9l7.5-4.5L9 7.5Z"/></svg></span>
       <div class="yt-card-info">
@@ -254,7 +255,7 @@
     </a>
 
     <a class="yt-card" href="https://www.youtube.com/watch?v=J3GhZImXvZ0" target="_blank" rel="noopener">
-      <img src="https://img.youtube.com/vi/J3GhZImXvZ0/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2023">
+      <img src="https://img.youtube.com/vi/J3GhZImXvZ0/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2023" loading="lazy">
       <div class="yt-card-overlay"></div>
       <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M9 7.5v9l7.5-4.5L9 7.5Z"/></svg></span>
       <div class="yt-card-info">
@@ -264,7 +265,7 @@
     </a>
 
     <a class="yt-card" href="https://www.youtube.com/watch?v=bKc1b4d9puQ" target="_blank" rel="noopener">
-      <img src="https://img.youtube.com/vi/bKc1b4d9puQ/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2022">
+      <img src="https://img.youtube.com/vi/bKc1b4d9puQ/hqdefault.jpg" alt="Summer Sports Week THE MOVIE 2022" loading="lazy">
       <div class="yt-card-overlay"></div>
       <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M9 7.5v9l7.5-4.5L9 7.5Z"/></svg></span>
       <div class="yt-card-info">
@@ -288,57 +289,76 @@
       <div class="carousel-track">
 
         <div class="media-card">
-          <img src="Files/designs/almanak-logo.png" alt="Almanak Logo">
+          <img src="Files/designs/almanak-logo.png" alt="Almanak Logo" loading="lazy">
           <div class="overlay"><h3>Almanak</h3><p>Clapperboard-inspired logo for a film-themed almanac.</p></div>
         </div>
 
-        <div class="media-card">
-          <img src="Files/designs/baco-logo.png" alt="BaCo Logo">
+        <div class="media-card media-card-wild" tabindex="0">
+          <img class="wild-photo" src="Files/designs-in-the-wild/baco-wild.jpg" alt="BaCo logo printed on a committee polo shirt" loading="lazy">
+          <img class="design-logo" src="Files/designs/baco-logo.png" alt="BaCo Logo" loading="lazy">
           <div class="overlay"><h3>BaCo</h3><p>Clean drink-themed logo for a committee revolving around cocktail events.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/designs/camo-gold-logo.png" alt="Camo Gold Challenge">
+          <img src="Files/designs/camo-gold-logo.png" alt="Camo Gold Challenge" loading="lazy">
           <div class="overlay"><h3>Camo Gold Challenge</h3><p>Sports challenge logo with camouflage and gold tones.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/designs/intro-commissie-logo.png" alt="Intro Commissie Logo">
+          <img src="Files/designs/intro-commissie-logo.png" alt="Intro Commissie Logo" loading="lazy">
           <div class="overlay"><h3>Intro Commissie</h3><p>Modern minimalistic logo for a student introduction committee.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/designs/opa-rose.png" alt="Opa">
-          <div class="overlay"><h3>Rose with Gypsophila</h3><p>A piece made for my deceased grandfather.</p></div>
+          <img src="Files/designs/opa-rose.png" alt="Opa" loading="lazy">
+          <div class="overlay"><h3>Rose with Gypsophila</h3><p>A piece made to remember my grandfather.</p></div>
         </div>
 
-        <div class="media-card">
-          <img src="Files/designs/lustrum-logo.png" alt="Lustrum Logo">
+        <div class="media-card media-card-wild media-card-lustrum" tabindex="0">
+          <img class="wild-photo" src="Files/designs-in-the-wild/lustrum-wild.jpg" alt="Lustrum logo as an enamel pin on a cap" loading="lazy">
+          <img class="design-logo" src="Files/designs/lustrum-logo.png" alt="Lustrum Logo" loading="lazy">
           <div class="overlay"><h3>Lustrum Logo</h3><p>Stylized flame mark representing the Sticky association’s lustrum theme.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/designs/media-werkgroep-logo.png" alt="Media Werkgroep Logo">
+          <img src="Files/designs/media-werkgroep-logo.png" alt="Media Werkgroep Logo" loading="lazy">
           <div class="overlay"><h3>Media Werkgroep</h3><p>Media-oriented logo combining a camera, film, and color wheel.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/designs/poha-logo.png" alt="POHA Logo">
+          <img src="Files/designs/poha-logo.png" alt="POHA Logo" loading="lazy">
           <div class="overlay"><h3>POHA</h3><p>Dental-themed logo combining a tooth and the African continent.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/designs/wispo-24-25-logo.png" alt="See the Slopes">
+          <img src="Files/designs/wispo-24-25-logo.png" alt="See the Slopes" loading="lazy">
           <div class="overlay"><h3>See the Slopes 2024–2025</h3><p>Playful ski-trip logo with French flag and dynamic typography.</p></div>
         </div>
 
-        <div class="media-card">
-          <img src="Files/designs/wispo-25-26-logo.png" alt="Skirby">
+        <div class="media-card media-card-wild" tabindex="0">
+          <img class="wild-photo" src="Files/designs-in-the-wild/skirby-wild.jpg" alt="Skirby logo on a Les Menuires Lustrum ski trip hoodie" loading="lazy">
+          <img class="design-logo" src="Files/designs/wispo-25-26-logo.png" alt="Skirby" loading="lazy">
           <div class="overlay"><h3>Skirby 2025–2026</h3><p>Fun mascot-based skiing design combining nostalgia and creativity.</p></div>
         </div>
 
         <div class="media-card">
-          <img src="Files/designs/almanak-logo.png" alt="Almanak Logo">
+          <img src="Files/designs/Dies logo.png" alt="Dies Logo" loading="lazy">
+          <div class="overlay"><h3>Dies</h3><p>Retro handheld-console-styled logo for the Dies (anniversary) committee.</p></div>
+        </div>
+
+        <div class="media-card media-card-wild" tabindex="0">
+          <img class="wild-photo" src="Files/designs-in-the-wild/almanak-wild.jpg" alt="Almanak emblem printed on the almanac book cover" loading="lazy">
+          <img class="design-logo" src="Files/designs/almanak.png" alt="Almanak Emblem" loading="lazy">
+          <div class="overlay"><h3>Almanak Emblem</h3><p>Vintage camera-and-sunburst badge design for the film-themed almanac.</p></div>
+        </div>
+
+        <div class="media-card media-card-jaartrui">
+          <img src="Files/designs/jaartrui.png" alt="Sticky Jaartrui Design" loading="lazy">
+          <div class="overlay"><h3>Sticky Jaartrui</h3><p>Year-sweater design for Sticky's 2025–2026 board year, packed with icons from the year's memories.</p></div>
+        </div>
+
+        <div class="media-card">
+          <img src="Files/designs/almanak-logo.png" alt="Almanak Logo" loading="lazy">
           <div class="overlay"><h3>Almanak</h3><p>Clapperboard-inspired logo for a film-themed almanac.</p></div>
         </div>
 
@@ -355,19 +375,19 @@
 
     <a class="web-card" href="https://summersportsweek.nl" target="_blank" rel="noopener">
       <div class="web-card-visual web-card-visual-ssw">
-        <img src="Files/web/ssw-website.png" alt="Summer Sports Week website homepage">
+        <img src="Files/web/ssw-website.jpg" alt="Summer Sports Week website homepage" loading="lazy">
         <div class="web-card-browser"><span></span><span></span><span></span></div>
       </div>
       <div class="web-card-body">
         <h3>Summer Sports Week</h3>
-        <p>The full website for an annual sports week for 200+ kids — from online registration and merch to a photo archive spanning eight editions. Built and maintained as one of the organizers.</p>
+        <p>The full website for an annual sports week for 250+ kids — from online registration and merch to a photo archive spanning eight editions. Built and maintained as one of the organizers.</p>
         <span class="web-card-link">Visit summersportsweek.nl →</span>
       </div>
     </a>
 
     <a class="web-card" href="https://stichtingpoha.nl" target="_blank" rel="noopener">
       <div class="web-card-visual web-card-visual-poha">
-        <img src="Files/web/poha-website.png" alt="Stichting POHA website homepage">
+        <img src="Files/web/poha-website.jpg" alt="Stichting POHA website homepage" loading="lazy">
         <div class="web-card-browser"><span></span><span></span><span></span></div>
       </div>
       <div class="web-card-body">
@@ -382,8 +402,7 @@
 
 </section>
 
-
-<!-- Contact -->
+<!-- Contact Section -->
 <section id="contact" class="section">
   <h2 class="reveal">Get in Touch</h2>
   <p class="reveal">Let's collaborate on something great.</p>
@@ -505,7 +524,7 @@ if (revealEls.length) {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.01, rootMargin: '200px 0px 200px 0px' });
 
   revealEls.forEach(el => revealObserver.observe(el));
 }
