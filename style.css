@@ -362,6 +362,19 @@ h2 {
   opacity: 1;
 }
 
+/* Real mouse devices get hover-to-reveal too. Scoped so touchscreens (which
+   can leave a phantom hover/focus state after a tap) only ever go through
+   the click-driven .flipped class above. */
+@media (hover: hover) and (pointer: fine) {
+  .media-card-wild:hover .wild-photo {
+    opacity: 0;
+  }
+
+  .media-card-wild:hover .design-logo {
+    opacity: 1;
+  }
+}
+
 /* overlay on hover */
 .overlay {
   position: absolute;
