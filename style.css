@@ -1,9 +1,6 @@
 :root {
   --c-orange: #7C3519;
   --c-orange-light: #A8684A;
-  --c-dark: #1A100A;
-  --c-dark2: #241811;
-  --c-dark3: #2E2016;
   --c-bg: #FAF6F1;
   --c-bg2: #F1EAE1;
   --c-bg3: #E6DACB;
@@ -16,7 +13,6 @@
   --font-display: 'Bricolage Grotesque', sans-serif;
   --font-body: 'DM Sans', sans-serif;
 
-  --radius: 12px;
   --radius-lg: 1rem;
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -175,12 +171,6 @@ header {
   background: var(--c-bg);
 }
 
-.section.dark {
-  --fade-color: var(--c-dark);
-  background: var(--c-dark);
-  color: var(--c-bg);
-}
-
 h2 {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 4vw, 2.4rem);
@@ -287,19 +277,10 @@ h2 {
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
-.section.dark .media-card {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
 .media-card:hover {
   transform: translateY(-6px);
   border-color: rgba(124,53,25,0.35);
-  box-shadow: 0 12px 30px rgba(26, 26, 24, 0.1);
-}
-
-.section.dark .media-card:hover {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 30px rgba(36, 22, 17, 0.1);
 }
 
 .media-card img {
@@ -319,13 +300,6 @@ h2 {
 .media-card-jaartrui,
 .media-card-jaartrui img {
   background-color: #000;
-}
-
-.media-card video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-color: #fff;
 }
 
 /* Designs in the wild — show the real-world photo first, tap/click reveals
@@ -411,7 +385,7 @@ h2 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(26, 26, 24, 0.55);
+  background: rgba(36, 22, 17, 0.55);
   border: 1px solid rgba(255,255,255,0.15);
   color: white;
   font-size: 1.6rem;
@@ -515,7 +489,7 @@ h2 {
 .yt-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(15,17,16,0.85) 0%, rgba(15,17,16,0.05) 45%, transparent 70%);
+  background: linear-gradient(to top, rgba(26,16,10,0.85) 0%, rgba(26,16,10,0.05) 45%, transparent 70%);
 }
 
 .yt-play {
@@ -695,7 +669,7 @@ h2 {
 .web-card:hover {
   transform: translateY(-4px);
   border-color: rgba(124,53,25,0.3);
-  box-shadow: 0 14px 34px rgba(26, 26, 24, 0.1);
+  box-shadow: 0 14px 34px rgba(36, 22, 17, 0.1);
 }
 
 .web-card-visual {
@@ -733,7 +707,7 @@ h2 {
   display: flex;
   gap: 0.35rem;
   padding: 0.35rem 0.5rem;
-  background: rgba(15,17,16,0.45);
+  background: rgba(26,16,10,0.45);
   border-radius: 999px;
   z-index: 2;
 }
@@ -848,7 +822,7 @@ h2 {
   height: 350px;
   object-fit: cover;
   border-radius: var(--radius-lg);
-  box-shadow: 0 10px 30px rgba(26, 26, 24, 0.15);
+  box-shadow: 0 10px 30px rgba(36, 22, 17, 0.15);
   background-color: var(--c-bg3);
 }
 
@@ -856,7 +830,7 @@ h2 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(26, 26, 24, 0.55);
+  background: rgba(36, 22, 17, 0.55);
   color: white;
   border: 1px solid rgba(255,255,255,0.15);
   font-size: 1.7rem;
@@ -914,14 +888,14 @@ h2 {
 .about-card-base-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(15,17,16,0.82) 0%, rgba(15,17,16,0.1) 45%, transparent 70%);
+  background: linear-gradient(to top, rgba(26,16,10,0.82) 0%, rgba(26,16,10,0.1) 45%, transparent 70%);
   z-index: 1;
 }
 
 .about-card-hover-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(15,17,16,0.93) 0%, rgba(15,17,16,0.6) 60%, rgba(15,17,16,0.1) 100%);
+  background: linear-gradient(to top, rgba(26,16,10,0.93) 0%, rgba(26,16,10,0.6) 60%, rgba(26,16,10,0.1) 100%);
   opacity: 0;
   transition: opacity 0.15s ease-out;
   z-index: 1;
@@ -1051,7 +1025,12 @@ h2 {
   }
 }
 
-/* Touch devices can't hover, so show card text permanently instead of gating it */
+/* Touch devices can't hover, so show card text permanently instead of gating it.
+   The max-height/opacity override on .about-card-content p duplicates the one
+   in the 560px breakpoint above on purpose: that one covers a narrow desktop
+   window (mouse, no touch), this one covers a wider touch device (e.g. a
+   tablet) that still uses the overlay-on-photo layout. Removing either
+   re-breaks its own case. */
 @media (hover: none), (pointer: coarse) {
   .about-card-hover-overlay {
     opacity: 1;

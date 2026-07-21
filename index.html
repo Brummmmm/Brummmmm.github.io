@@ -357,11 +357,6 @@
           <div class="overlay"><h3>Sticky Jaartrui</h3><p>Year-sweater design for Sticky's 2025–2026 board year, packed with icons from the year's memories.</p></div>
         </div>
 
-        <div class="media-card">
-          <img src="Files/designs/almanak-logo.png" alt="Almanak Logo" loading="lazy">
-          <div class="overlay"><h3>Almanak</h3><p>Clapperboard-inspired logo for a film-themed almanac.</p></div>
-        </div>
-
       </div>
     </div>
     <button class="arrow right" onclick="scrollCarousel(this, 1)">&#10095;</button>
@@ -474,15 +469,6 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
   carousel.addEventListener('mouseleave', () => {
     autoScroll = setInterval(() => loopScroll(carousel), 6000);
-  });
-});
-
-/* --- AUTO PLAY VIDEOS --- */
-document.querySelectorAll('video').forEach(video => {
-  video.addEventListener('mouseenter', () => video.play());
-  video.addEventListener('mouseleave', () => {
-    video.pause();
-    video.currentTime = 0;
   });
 });
 
