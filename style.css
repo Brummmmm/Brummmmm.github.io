@@ -1060,10 +1060,14 @@ h2 {
 
 @media (max-width: 560px) {
   .about-grid { grid-template-columns: 1fr 1fr; }
+}
 
-  /* Text can no longer be revealed on hover on a touch device, so instead of
-     overlaying it on the photo at a fixed card height (which clips longer
-     text), stack photo-on-top + text-below and let the card grow to fit. */
+/* Text can't be revealed on hover on a touch device (and a phantom/stuck
+   hover state was making it overflow the fixed-height card and clip the
+   last line). So on ANY touch/no-hover device — not just narrow phone
+   screens — stack photo-on-top + text-below instead of overlaying the
+   text on the photo, and let the card grow to fit the text. */
+@media (max-width: 560px), (hover: none), (pointer: coarse) {
   .about-card {
     aspect-ratio: unset;
     display: flex;
@@ -1102,27 +1106,6 @@ h2 {
 
   .about-card-content strong {
     color: var(--c-text);
-  }
-}
-
-/* Touch devices can't hover, so show card text permanently instead of gating it.
-   The max-height/opacity override on .about-card-content p duplicates the one
-   in the 560px breakpoint above on purpose: that one covers a narrow desktop
-   window (mouse, no touch), this one covers a wider touch device (e.g. a
-   tablet) that still uses the overlay-on-photo layout. Removing either
-   re-breaks its own case. */
-@media (hover: none), (pointer: coarse) {
-  .about-card-hover-overlay {
-    opacity: 1;
-  }
-
-  .about-card-content h3 {
-    margin-bottom: 0.5rem;
-  }
-
-  .about-card-content p {
-    max-height: none;
-    opacity: 1;
   }
 }
 
