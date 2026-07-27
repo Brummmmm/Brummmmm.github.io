@@ -1,6 +1,7 @@
 :root {
-  --c-orange: #7C3519;
-  --c-orange-light: #A8684A;
+  --c-brand: #7C3519;
+  --c-brand-rgb: 124, 53, 25;
+  --c-brand-light: #A8684A;
   --c-bg: #FAF6F1;
   --c-bg2: #F1EAE1;
   --c-bg3: #E6DACB;
@@ -177,7 +178,7 @@ h2 {
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
-  color: var(--c-orange);
+  color: var(--c-brand);
   text-align: left;
   width: 90%;
   max-width: 1200px;
@@ -186,7 +187,7 @@ h2 {
 /* HERO */
 .hero {
   position: relative;
-  background: linear-gradient(to bottom, rgba(124,53,25,0.06), transparent);
+  background: linear-gradient(to bottom, rgba(var(--c-brand-rgb), 0.06), transparent);
   border-bottom: 1px solid var(--c-border);
   text-align: center;
   color: var(--c-text);
@@ -202,7 +203,7 @@ h2 {
 }
 
 .hero h1 span {
-  color: var(--c-orange);
+  color: var(--c-brand);
 }
 
 .hero p {
@@ -218,7 +219,7 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--c-orange);
+  background: var(--c-brand);
   color: var(--c-bg);
   padding: 0.85rem 2rem;
   border-radius: 10px;
@@ -232,8 +233,8 @@ h2 {
 
 .btn:hover {
   transform: translateY(-2px);
-  background: var(--c-orange-light);
-  box-shadow: 0 8px 25px rgba(124,53,25,0.3);
+  background: var(--c-brand-light);
+  box-shadow: 0 8px 25px rgba(var(--c-brand-rgb), 0.3);
 }
 
 /* CAROUSEL (Designs & Videos) */
@@ -279,7 +280,7 @@ h2 {
 
 .media-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(124,53,25,0.35);
+  border-color: rgba(var(--c-brand-rgb), 0.35);
   box-shadow: 0 12px 30px rgba(36, 22, 17, 0.1);
 }
 
@@ -303,8 +304,9 @@ h2 {
 }
 
 /* Designs in the wild — show the real-world photo first, tap/click reveals
-   the flat design (driven entirely by the .flipped class in main.js so
-   hover/focus can't fight with the click state). */
+   the flat design (driven entirely by the .flipped class toggled in the
+   inline script at the bottom of index.html, so hover/focus can't fight
+   with the click state). */
 .media-card-wild {
   cursor: pointer;
 }
@@ -369,7 +371,7 @@ h2 {
 
 .overlay h3 {
   font-family: var(--font-display);
-  color: var(--c-orange-light);
+  color: var(--c-brand-light);
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
@@ -380,29 +382,50 @@ h2 {
   color: rgba(255,255,255,0.8);
 }
 
-/* carousel arrows */
-.arrow {
+/* carousel arrows — shared round-nav-button base with .carousel-btn (About intro carousel) */
+.arrow,
+.carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
   background: rgba(36, 22, 17, 0.55);
   border: 1px solid rgba(255,255,255,0.15);
-  color: white;
-  font-size: 1.6rem;
-  padding: 0.4rem 0.9rem;
   border-radius: 50%;
+  color: white;
+  font-size: 1.3rem;
+  line-height: 1;
   cursor: pointer;
+  transition: background var(--transition);
+}
+
+.arrow {
   z-index: 5;
   transition: background var(--transition), transform var(--transition);
 }
 
 .arrow:hover {
-  background: var(--c-orange);
+  background: var(--c-brand);
   transform: translateY(-50%) translateY(-2px);
 }
 
 .arrow.left { left: 1rem; }
 .arrow.right { right: 1rem; }
+
+.arrow svg,
+.carousel-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* fade on sides */
 .carousel-container::before,
@@ -535,7 +558,7 @@ h2 {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--c-orange-light);
+  color: var(--c-brand-light);
   margin-bottom: 0.25rem;
 }
 
@@ -654,7 +677,19 @@ h2 {
   margin: 0 auto;
 }
 
-.web-card {
+/* SOCIAL MEDIA CARDS */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 1.5rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Shared tile base for .web-card and .social-card */
+.web-card,
+.social-card {
   display: flex;
   flex-direction: column;
   background: var(--c-bg2);
@@ -666,34 +701,40 @@ h2 {
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
-.web-card:hover {
+.web-card:hover,
+.social-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(124,53,25,0.3);
+  border-color: rgba(var(--c-brand-rgb), 0.3);
   box-shadow: 0 14px 34px rgba(36, 22, 17, 0.1);
 }
 
-.web-card-visual {
+.web-card-visual,
+.social-card-visual {
   position: relative;
   height: 190px;
   overflow: hidden;
 }
 
-.web-card-visual img {
+.web-card-visual img,
+.social-card-visual img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.web-card:hover .web-card-visual img {
+.web-card-visual img { object-position: top; }
+.social-card-visual img { object-position: center; }
+
+.web-card:hover .web-card-visual img,
+.social-card:hover .social-card-visual img {
   transform: scale(1.04);
 }
 
 .web-card-visual-ssw {
-  background: linear-gradient(155deg, var(--c-orange) 0%, #CBA492 100%);
+  background: linear-gradient(155deg, var(--c-brand) 0%, #CBA492 100%);
 }
 
 .web-card-visual-poha {
@@ -719,23 +760,63 @@ h2 {
   background: rgba(255,255,255,0.55);
 }
 
-.web-card-body {
+.social-card-icon {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: linear-gradient(155deg, #4f5bd5 0%, #962fbf 30%, #d62976 60%, #fa7e1e 85%, #feda75 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.social-card-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.web-card-body,
+.social-card-body {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.web-card-body h3 {
+.web-card-body h3,
+.social-card-body h3 {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: -0.01em;
   color: var(--c-text);
+}
+
+.web-card-body h3 { margin-bottom: 0.6rem; }
+.social-card-body h3 { margin-bottom: 0.3rem; }
+
+.social-card-period {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-brand-light);
   margin-bottom: 0.6rem;
 }
 
-.web-card-body p {
+.web-card-body p,
+.social-card-body p {
   font-size: 0.9rem;
   color: var(--c-text2);
   line-height: 1.6;
@@ -743,10 +824,11 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.web-card-link {
+.web-card-link,
+.social-card-link {
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--c-orange);
+  color: var(--c-brand);
 }
 
 /* ABOUT ME SECTION */
@@ -757,7 +839,7 @@ h2 {
 }
 
 .about h2 {
-  color: var(--c-orange);
+  color: var(--c-brand);
   text-align: center;
   font-size: clamp(1.8rem, 4vw, 2.4rem);
   margin-bottom: 2rem;
@@ -786,7 +868,7 @@ h2 {
 
 .about-intro-text h2 {
   font-size: clamp(1.8rem, 4vw, 2.4rem);
-  color: var(--c-orange);
+  color: var(--c-brand);
   margin-bottom: 1.5rem;
   text-align: left;
   width: auto;
@@ -826,23 +908,13 @@ h2 {
   background-color: var(--c-bg3);
 }
 
+/* shared round-nav-button base lives with .arrow near the carousel arrows above */
 .carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(36, 22, 17, 0.55);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.15);
-  font-size: 1.7rem;
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 0.4rem 0.8rem;
   z-index: 2;
-  transition: background var(--transition);
 }
 
 .carousel-btn:hover {
-  background: var(--c-orange);
+  background: var(--c-brand);
 }
 
 .carousel-btn.left { left: 0.3rem; }
@@ -867,7 +939,7 @@ h2 {
 }
 
 .about-card:focus-visible {
-  outline: 2px solid var(--c-orange);
+  outline: 2px solid var(--c-brand);
   outline-offset: 3px;
 }
 
@@ -1103,8 +1175,8 @@ h2 {
 }
 
 .contact-social-link:hover {
-  background: var(--c-orange);
-  border-color: var(--c-orange);
+  background: var(--c-brand);
+  border-color: var(--c-brand);
   color: #fff;
   transform: translateY(-2px);
 }
@@ -1137,8 +1209,13 @@ footer {
   }
 
   .arrow {
-    font-size: 1.3rem;
-    padding: 0.3rem 0.7rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .arrow svg {
+    width: 17px;
+    height: 17px;
   }
 
   .arrow.left { left: 0; }
