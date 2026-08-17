@@ -749,6 +749,10 @@ h2 {
   background: linear-gradient(155deg, #2D6A2F 0%, #8fd19e 100%);
 }
 
+.web-card-visual-sticky {
+  background: linear-gradient(155deg, #E4572E 0%, #F3A683 100%);
+}
+
 .web-card-browser {
   position: absolute;
   top: 0.7rem;
